@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerhead : MonoBehaviour
 {
-   public Transform player;
+    public Transform player;
     //子弹预设体
     public GameObject BulletPre;
     //开火点
@@ -14,6 +14,8 @@ public class playerhead : MonoBehaviour
     public GameObject AttPre;
     public Transform attackposition;
     public GameObject shoulei;
+    private paotai paotai;
+    private Player Player;
 
    
 
@@ -24,6 +26,13 @@ public class playerhead : MonoBehaviour
     void Start()
     {
          ani = GetComponent<Animator>();
+
+          Player = GameObject.FindWithTag("Player").GetComponent<Player>();
+          player = Player.transform;
+        
+          paotai = GameObject.FindWithTag("paotai").GetComponent<paotai>();
+          attackposition = GameObject.FindWithTag("playerposition").transform;
+          FirePoint = GameObject.FindWithTag("playerposition").transform;
     }
 
     // Update is called once per frame
@@ -52,6 +61,14 @@ public class playerhead : MonoBehaviour
             
             Instantiate(shoulei,attackposition.position,attackposition.rotation).GetComponent<shoulei>().GetComponent<Rigidbody2D>().AddForce(new Vector3(1000 * player.localScale.x ,10,1000),ForceMode2D.Force);
         }
+
+
+        if(Input.GetKeyDown(KeyCode.S)  && paotai.transform.position.x - Player.transform.position.x < 3 && paotai.transform.position.x - Player.transform.position.x   > -3  ){
+                         
+                        
+                        Destroy(gameObject);
+                        
+                }
         
         
     }

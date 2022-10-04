@@ -15,6 +15,9 @@ TagManager:
   - zhadan
   - npc
   - hp
+  - paotai
+  - playerposition
+  - rottemp
   layers:
   - Default
   - TransparentFX
