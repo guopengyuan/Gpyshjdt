@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public GameObject headPre;
     public GameObject footPre;
     Sprite sprite ;
+    private int move;
    
 
     public int hp = 10;
@@ -84,20 +85,30 @@ public class Player : MonoBehaviour
                 Instantiate(headPre,transform.position + new Vector3(0,-0.75f,0),transform.rotation,transform);
                 head = Instantiate(footPre,transform.position+ new Vector3(0,-2,0) ,transform.rotation,transform);
                 ispaotai = false;
+
             }
+
+            
+            
+            if(Input.GetKeyDown(KeyCode.K)){
+                if(move == 1){
+                    move = 0;
+                }
+                move = -1;
+            }
+            if(Input.GetKeyDown(KeyCode.L)){
+                if(move == -1){
+                    move = 0;
+                }
+            move = 1;      
+            }
+
+            transform.Translate(transform.right * move * 10* Time.deltaTime); 
+
+
+            transform.position = paotai.transform.position;
         }
 
-        
-
-        // if(inpaotai == true && Input.GetKeyDown(KeyCode.Space)){
-        //                 inpaotai = false;
-        // }
-
-     
-      
-
-
-      
 
     }
 
@@ -106,6 +117,10 @@ public class Player : MonoBehaviour
             if(collision.collider.tag == "Grond"){
                 isGrond = true;
             }
+            if(collision.collider.tag == "car"){
+                isGrond = true;
+            }
+
             if(collision.collider.tag == "bullet"){
                 hp--;
                 
@@ -123,6 +138,10 @@ public class Player : MonoBehaviour
                 
             }
              if(collision.collider.tag == "zhadan"){
+                hp--;
+                
+            }
+            if(collision.collider.tag == "pao"){
                 hp--;
                 
             }

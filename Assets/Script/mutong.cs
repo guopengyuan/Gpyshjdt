@@ -37,6 +37,10 @@ public class mutong : MonoBehaviour
                 hp--;
                 
             }
+            if(collision.collider.tag == "pao"  ){
+                hp--;
+                
+            }
             
             
         }

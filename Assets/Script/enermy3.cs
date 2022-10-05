@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enermy1 : MonoBehaviour
+public class enermy3 : MonoBehaviour
 {
 
     //血量
@@ -16,26 +16,24 @@ public class enermy1 : MonoBehaviour
     //判断玩家距离
     private Player player;
     //子弹预设体
-    public GameObject BulletPre;
+    public GameObject paoPre;
     //开火点
     public Transform FirePoint;
 
-   
-
+    private  paotai paotai;
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();
+         ani = GetComponent<Animator>();
 
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        paotai = GameObject.FindWithTag("paotai").GetComponent<paotai>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
-        if(hp <= 0){
+         if(hp <= 0){
                                     ani.SetTrigger("die");
                                     Destroy(GetComponent<Rigidbody2D>());
                                     Destroy(GetComponent<CapsuleCollider2D>());
@@ -45,10 +43,10 @@ public class enermy1 : MonoBehaviour
 
         
         if(transform.position.x - player.transform.position.x > 0){
-                transform.localScale = new Vector3(5,5,1);
+                transform.localScale = new Vector3(3,3,1);
         }
         else {
-                transform.localScale = new Vector3(-5,5,1);
+                transform.localScale = new Vector3(-3,3,1);
         }
         
         float dis = Vector3.Distance(player.transform.position,transform.position);
@@ -57,24 +55,19 @@ public class enermy1 : MonoBehaviour
         if(dis < 20){
             if(timer > 1){
                             
-                            ani.SetBool("isrun",false);
-                            ani.SetBool("isattack",true);
-                             Instantiate(BulletPre,FirePoint.position,FirePoint.rotation).GetComponent<bullet>().dir = transform.localScale.x * -1;
+                         Instantiate(paoPre,FirePoint.position,FirePoint.rotation).GetComponent<pao>().dir = new Vector2((transform.position.x - player.transform.position.x) * -1 / 10, (transform.position.y - player.transform.position.y) * -1 / 10);
                             timer = 0;
                         }
         }
-        else if(dis > 20 && dis < 30){
+        if( dis < 30){
             
-            
-                ani.SetBool("isattack",false);
-                ani.SetBool("isrun",true);
-                transform.Translate((transform.position.x - player.transform.position.x > 0 ?Vector2.left : Vector2.right)  * 2f * Time.deltaTime);
+                if(transform.position.y > player.transform.position.y)
+                transform.Translate(transform.up   * -2f * Time.deltaTime);
             
             }
             
-            
-        
     }
+
 
     //如果碰到子弹
      private void  OnCollisionEnter2D(Collision2D collision) {
@@ -98,8 +91,4 @@ public class enermy1 : MonoBehaviour
 
 
         }
-
-
-    
-
 }

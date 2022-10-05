@@ -18,6 +18,9 @@ TagManager:
   - paotai
   - playerposition
   - rottemp
+  - pao
+  - enermy3
+  - car
   layers:
   - Default
   - TransparentFX

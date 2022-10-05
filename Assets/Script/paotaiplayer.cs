@@ -11,6 +11,7 @@ public class paotaiplayer : MonoBehaviour
     private paotai paotai;
     private rottemp rot;
     float horizontal;
+    private int hp;
     
      Sprite sprite ;
      private int dir;
@@ -36,6 +37,10 @@ public class paotaiplayer : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.J)){
                     Instantiate(paoPre,paoPoint, rot.transform.rotation).GetComponent<pao>().dir = new Vector2( 5 * horizontal,horizontal > 0 ? (5 - 5 * horizontal) : (5 + 5 * horizontal)) ;
         }
+
+        
+
+
         
     }
 
@@ -53,9 +58,8 @@ public class paotaiplayer : MonoBehaviour
 
             paoPoint = paotai.transform.position + new Vector3( 5 * horizontal,horizontal > 0 ? (5 - 5 * horizontal) : (5 + 5 * horizontal),0);
             rot.transform.localEulerAngles = new Vector3(0,0,90 * (90 - horizontal) - 90);
+            transform.position = paotai.transform.position;
             
-            
-
 
             switch ((int)(horizontal / 0.125)){
                     case 0 :
@@ -105,4 +109,9 @@ public class paotaiplayer : MonoBehaviour
                          break;
         }
         }
+
+
+
+
+
 }
