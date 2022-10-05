@@ -18,7 +18,7 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.right * 15 * Time.deltaTime * (dir > 0 ?1 : -1));
+        transform.Translate( transform.right * 15 * Time.deltaTime * (dir > 0 ?1 : -1));
     }
 
 

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4326220068329344496}
   - component: {fileID: 4326220068329344499}
   - component: {fileID: 1393387531274325392}
+  - component: {fileID: 6547780707586378806}
   m_Layer: 0
   m_Name: pao
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326220068329344498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -224.6727, y: -3.1753, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -223.9436, y: -3.4367, z: 0}
+  m_LocalScale: {x: 0.3687, y: 0.6099, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,3 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e0527830c6d474fa9dcacdb0ccde6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0}
+--- !u!136 &6547780707586378806
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326220068329344498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.39836884
+  m_Height: 1.3741107
+  m_Direction: 1
+  m_Center: {x: 0.037308916, y: 0.048827335, z: 0}

@@ -7,9 +7,10 @@ public class paotaiplayer : MonoBehaviour
     public GameObject paoPre;
     public GameObject playerPre;
     private Player player;
-    private Vector3 paoPoint;
+    public Vector3 paoPoint;
     private paotai paotai;
     private rottemp rot;
+    float horizontal;
     
      Sprite sprite ;
      private int dir;
@@ -33,7 +34,7 @@ public class paotaiplayer : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.J)){
-                    Instantiate(paoPre,paoPoint, rot.transform.rotation);
+                    Instantiate(paoPre,paoPoint, rot.transform.rotation).GetComponent<pao>().dir = new Vector2( 5 * horizontal,horizontal > 0 ? (5 - 5 * horizontal) : (5 + 5 * horizontal)) ;
         }
         
     }
@@ -42,7 +43,7 @@ public class paotaiplayer : MonoBehaviour
 
     public void changePlayer(){
 
-            float horizontal = Input.GetAxis("Horizontal");
+            horizontal = Input.GetAxis("Horizontal");
 
             if(horizontal * player.transform.localScale.x > 0){
                 dir = -10;
