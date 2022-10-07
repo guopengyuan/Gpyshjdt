@@ -23,5 +23,16 @@ public class playerfoot : MonoBehaviour
                         Destroy(gameObject);
                         
                 }
+          if(Player.hp <= 0){
+
+                        
+                        Destroy(GetComponent<Rigidbody2D>());
+                        Destroy(GetComponent<CapsuleCollider2D>());
+                    
+                        Destroy(gameObject ,1f);
+                        
+                
+                    }
+
     }
 }

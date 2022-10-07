@@ -14,7 +14,7 @@ public class npc : MonoBehaviour
     private Player player;
     private Animator ani;
 
-    public GameObject hpPre;
+    public GameObject winPre;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,7 @@ public class npc : MonoBehaviour
                 ani.SetTrigger("give");
                 //扔下道具
 
-                Instantiate(hpPre,transform.position,transform.rotation);
+                Instantiate(winPre,transform.position,transform.rotation);
                 Destroy(GetComponent<Rigidbody2D>());
                 Destroy(GetComponent<BoxCollider2D>());
                 ifgive = false;

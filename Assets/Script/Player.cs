@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public GameObject footPre;
     Sprite sprite ;
     private int move;
+    public bool win;
    
 
     public int hp = 10;
@@ -57,15 +58,7 @@ public class Player : MonoBehaviour
                 }else {
 
                 }
-                if(hp <= 0){
-                        head.GetComponent<Animator>().SetTrigger("die");
-                        Destroy(GetComponent<Rigidbody2D>());
-                        Destroy(GetComponent<CapsuleCollider2D>());
-                    
-                        Destroy(gameObject ,1f);
-                        
                 
-                    }
                 if(Input.GetKeyDown(KeyCode.Space) && isGrond == true){
                             rbody.AddForce(Vector2.up * 750);
                     }
@@ -130,11 +123,11 @@ public class Player : MonoBehaviour
                 
             }
             if(collision.collider.tag == "enermy2"){
-                hp-=10;
+                hp--;
                 
             }
             if(collision.collider.tag == "dilei"){
-                hp-=10;
+                hp--;
                 
             }
              if(collision.collider.tag == "zhadan"){
@@ -147,6 +140,18 @@ public class Player : MonoBehaviour
             }
             if(collision.collider.tag == "hp"){
                 hp++;
+
+                
+                
+            }
+            if(collision.collider.tag == "win"){
+                
+
+                win = true;
+                
+            }
+            if(collision.collider.tag == "nearattack"){
+                hp--;
                 
             }
             

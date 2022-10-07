@@ -21,6 +21,8 @@ TagManager:
   - pao
   - enermy3
   - car
+  - shirenhua
+  - cavas
   layers:
   - Default
   - TransparentFX

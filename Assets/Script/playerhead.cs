@@ -39,6 +39,18 @@ public class playerhead : MonoBehaviour
     void Update()
     {
 
+
+        if(Player.hp <= 0){
+
+                        ani.SetTrigger("die");
+                        Destroy(GetComponent<Rigidbody2D>());
+                        Destroy(GetComponent<CapsuleCollider2D>());
+                    
+                        Destroy(gameObject ,1f);
+                        
+                
+                    }
+
          timer += Time.deltaTime;
           if(Input.GetKeyDown(KeyCode.J) && timer > 0.5f){
             timer = 0;

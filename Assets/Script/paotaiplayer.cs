@@ -18,7 +18,7 @@ public class paotaiplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Sprite sprite = Resources.Load<Sprite>("image2040");
+        sprite = Resources.Load<Sprite>("image2040");
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         paotai = GameObject.FindWithTag("paotai").GetComponent<paotai>();
         dir = (int )player.transform.localScale.x * 2;

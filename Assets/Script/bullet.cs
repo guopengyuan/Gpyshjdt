@@ -77,6 +77,15 @@ public class bullet : MonoBehaviour
                     Destroy(gameObject);
                     
                 }
+
+                if(collision.collider.tag == "shirenhua"){
+                
+                
+                    Destroy(GetComponent<Rigidbody2D>());
+                    Destroy(GetComponent<CapsuleCollider2D>());
+                    Destroy(gameObject);
+                    
+                }
             
       }
 }

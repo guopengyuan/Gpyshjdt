@@ -161,6 +161,7 @@ MonoBehaviour:
   hp: 1
   BulletPre: {fileID: 5805212686033517170, guid: 91f49fcdfa5e64644baa7e5b2f091adb, type: 3}
   FirePoint: {fileID: 908945800595045143}
+  hpPre: {fileID: 513419792742695902, guid: 3ef009d9f69453a41aba496ba5b71ac5, type: 3}
 --- !u!1 &908945800595045140
 GameObject:
   m_ObjectHideFlags: 0

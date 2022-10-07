@@ -19,6 +19,8 @@ public class enermy1 : MonoBehaviour
     public GameObject BulletPre;
     //开火点
     public Transform FirePoint;
+    public GameObject hpPre;
+    private bool ifdie = false;
 
    
 
@@ -37,6 +39,11 @@ public class enermy1 : MonoBehaviour
 
         if(hp <= 0){
                                     ani.SetTrigger("die");
+                                    if(!ifdie){
+                                        Instantiate(hpPre,transform.position,transform.rotation);
+                                        ifdie = true;
+                                    }
+                                    
                                     Destroy(GetComponent<Rigidbody2D>());
                                     Destroy(GetComponent<CapsuleCollider2D>());
                                     Destroy(gameObject,1.5f);
