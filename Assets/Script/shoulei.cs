@@ -32,7 +32,10 @@ public class shoulei : MonoBehaviour
 
     //碰撞到地面
         private void  OnCollisionEnter2D(Collision2D collision) {
-            if(collision.collider.tag == "Grond"  || collision.collider.tag == "enermy"){
+            if(collision.collider.tag == "Grond"  || collision.collider.tag == "enermy" || collision.collider.tag == "Player"
+               || collision.collider.tag == "bullet" || collision.collider.tag == "enermy"  || collision.collider.tag == "nearattrack"
+               || collision.collider.tag == "enermy"  || collision.collider.tag == "enermy2" || collision.collider.tag == "mutong" 
+               || collision.collider.tag == "npc" || collision.collider.tag == "enermy3" || collision.collider.tag == "enermy" || collision.collider.tag == "car" ){
                 isGrond = true;
                 
             }

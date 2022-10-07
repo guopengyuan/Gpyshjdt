@@ -41,7 +41,9 @@ public class enermy2 : MonoBehaviour
 
         if(dis < 15){
                   
-                transform.Translate(Vector2.left * 7f * Time.deltaTime);
+                transform.Translate(Vector2.left * 7f * Time.deltaTime );
+
+            
                      
         }
         

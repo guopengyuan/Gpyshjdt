@@ -40,9 +40,9 @@ public class shirenhua : MonoBehaviour
             }
             timer += Time.deltaTime;
             if(attack == true){
+
                  if(timer > 1){
-                            
-                            
+                                    
                             ani.SetBool("isattack",true);
                             Instantiate(attackPre,attackpos.position,attackpos.rotation);
                             timer = 0;

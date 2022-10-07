@@ -46,7 +46,7 @@ public class bullet : MonoBehaviour
 
             if(collision.collider.tag == "bullet"){
                 
-                
+                    
                     Destroy(GetComponent<Rigidbody2D>());
                     Destroy(GetComponent<CapsuleCollider2D>());
                     Destroy(gameObject);

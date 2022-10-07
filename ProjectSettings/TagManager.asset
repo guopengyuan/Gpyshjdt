@@ -23,6 +23,7 @@ TagManager:
   - car
   - shirenhua
   - cavas
+  - win
   layers:
   - Default
   - TransparentFX

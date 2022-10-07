@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         
                 if(horizontal != 0){
                 //转身
-                    transform.localScale = new Vector3(horizontal>0 ? 0.5f: -0.5f, 1, 1);
+                    transform.localScale = new Vector3(horizontal>0 ? 1: -1, 1, 1);
 
                 //移动
                     transform.Translate(Vector2.right * horizontal * 5 * Time.deltaTime);
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
 
       //碰撞到地面
         private void  OnCollisionEnter2D(Collision2D collision) {
-            if(collision.collider.tag == "Grond"){
+            if(collision.collider.tag == "Grond" || collision.collider.tag == "mutong" || collision.collider.tag == "car"){
                 isGrond = true;
             }
             if(collision.collider.tag == "car"){
